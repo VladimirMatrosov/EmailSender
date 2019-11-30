@@ -1,0 +1,45 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<ScrollPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <VBox alignment="center">
+
+        <Label text="Введите email"/>
+        <TextField fx:id="emailField"/>
+        <Label text="Введите пароль"/>
+        <PasswordField fx:id="passwordField"/>
+        <Label text="Выберите файл с пользователями"/>
+        <HBox alignment="CENTER">
+            <Label fx:id="excelName"/>
+            <Button onAction="#selectExcel" text="Select Excel"/>
+        </HBox>
+        <!--    <Label text="Введите тему письма"/>
+            <TextField fx:id="subjectField"/>
+            <Label text="Введите текст письма"/>
+            <TextArea fx:id="textField"/>
+            <Label text="Выберите прикрепляемый файл"/>
+            <HBox alignment="CENTER">
+                <Label fx:id="attachmentName"/>
+                <Button onAction="#selectAttachment" text="Select Attachment"/>
+            </HBox> -->
+        <Button text="Send mails" onAction="#buttonClick"/>
+        <Button onAction="#stop" text="Stop"/>
+        <Label fx:id="messageLabel"/>
+        <HBox alignment="CENTER">
+            <ProgressIndicator fx:id="sendingIndicator"/>
+            <Label fx:id="progressStatus"/>
+        </HBox>
+        <Label fx:id="errorLabel"/>
+
+    </VBox>
+</ScrollPane>
